@@ -1,3 +1,4 @@
+require("dotenv").config();
 let lat, lon;
 if ("geolocation" in navigator) {
   console.log("geolocation available");
@@ -9,7 +10,7 @@ if ("geolocation" in navigator) {
       // document.getElementById("latitude").textContent = lat.toFixed(2);
       // document.getElementById("longitude").textContent = lon.toFixed(2);
 
-      // const apiKey = process.env.API_KEY;
+      const apiKey = process.env.API_KEY;
       const weather_url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly&appid=${apiKey}`;
 
       const aq_url = `https://api.openaq.org/v2/latest?coordinates=${lat},${lon}`;
