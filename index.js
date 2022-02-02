@@ -2,12 +2,13 @@ const express = require("express");
 // import fetch from "node-fetch";
 const Datastore = require("nedb");
 const nodemon = require("nodemon");
-const dotenv = require("dotenv").config();
+require("dotenv").config();
 
 const apiKey = process.env.API_KEY;
+const port = process.env.PORT || 4000;
 
 const app = express();
-const port = 4000;
+
 
 const database = new Datastore("database.db");
 database.loadDatabase();
